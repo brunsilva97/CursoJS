@@ -24,17 +24,21 @@
             </h2>
         </section>
         <script type="text/javascript">
-            const menuSobre = document.getElementById('menu-sobre');
-            
-            const menuContato = document.querySelector('#menu-contato');
+            const menus = document.querySelectorAll('a.item-menu');
 
-            menuSobre.addEventListener('click', function() {
-                menuSobre.classList.toggle('item-ativo');
+            menus.forEach(function (menu){
+                menu.addEventListener('click', function(event){
+                    event.preventDefault();
+                    menus.forEach(function(item) {
+                        item.classList.remove('item-ativo');
+                    });
+
+                    menu.classList.add('item-ativo');
+                });
+
             });
 
-            menuContato.addEventListener('click', function() {
-                menuContato.classList.toggle('item-ativo');
-            });   
+           
         </script>
     </body>
 </html>
