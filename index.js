@@ -1,12 +1,11 @@
-// npm install readline-sync
-const readline = require('readline-sync');
+const readline = require("readline-sync");
 
-const nome = readline.question('Qual o nome do aluno? ');
-const nota1 = readline.questionFloat("Qual a nota do Primeiro Bimestre? ");
-const nota2 = readline.questionFloat("Qual a nota do Segundo Bimestre? ");
-const nota3 = readline.questionFloat("Qual a nota do Teceiro Bimestre? ");
-const nota4 = readline.questionFloat("Qual a nota do Quarto Bimestre? ");
- 
-let resultado = (nota1 + nota2 + nota3 + nota4)/4;
+const sexo = readline.question("Qual o seu sexo? M - Masculino ou F - Feminino ");
 
-console.log(`A média do aluno ${nome} foi de ${resultado.toFixed(2)}`);
+if (sexo.toUpperCase() == "M") {
+    console.log("Pode entrar no banheiro masculino.");
+} else if (sexo.toLUpperCase() == "F") {
+    console.log("Não pode entrar no banheiro masculino.");
+} else {
+    console.log("Opção desconhecida.");
+}
