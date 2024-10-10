@@ -1,0 +1,15 @@
+const readline = require('readline-sync');
+const sexo = readline.question("Qual o sexo do(a) candidato(a)");
+const nome = readline.question("Qual o nome do(a) cadidato(a)?");
+const idade = readline.questionInt("Qual a idade do(a) cadidato(a)?");
+ 
+if (idade >= 18){
+    if (sexo = Masculino)
+    console.log("Bem-vindo ao Exécito brasileiro!");
+} else if (idade <=17) {
+    console.log("Você não tem a idade para se alistar ao Exécito");
+} else if (idade >= 18)(sexo = Feminino);{
+    const confirmacao = readline.question("Você gostaria de se alistar ao execito");
+} else if (confirmacao = sim){
+    console.log("Bem-vinda ao Exército")
+}

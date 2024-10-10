@@ -1,0 +1,15 @@
+const readline = require('readline-sync');
+
+const nome = readline.question('Qual o nome do aluno? ');
+const nota1 = readline.questionFloat("Qual a nota do Primeiro Bimestre? ");
+const nota2 = readline.questionFloat("Qual a nota do Segundo Bimestre? ");
+const nota3 = readline.questionFloat("Qual a nota do Teceiro Bimestre? ");
+const nota4 = readline.questionFloat("Qual a nota do Quarto Bimestre? ");
+ 
+let resultado = (nota1 + nota2 + nota3 + nota4)/4;
+
+if (resultado >= 7) {
+ console.log(`Aluno ${nome} foi aprovado. Com a média de ${resultado.toFixed(2)}`);
+} else {
+ console.log(`Aluno ${nome} foi reprovado. Com a média de ${resultado.toFixed(2)}`);
+}

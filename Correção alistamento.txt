@@ -1,0 +1,18 @@
+const readline = require('readline-sync');
+const idade = readline.questionInt("Qual a idade do(a) cadidato(a)?");
+ 
+if (idade >= 18) {
+    const sexo = readline.question("Qual o seu sexo? M - Masculino | F - Feminino \n")
+    if (sexo.toUpperCase() == 'M') {
+        console.log("Bem-vindo ao exercito brasileiro");
+    } else if (sexo.toUpperCase() == 'F') {
+        const resposta = readline.question("Desejar se alistar ao exército? S - SIM | N - Nao\n");
+        if (resposta.toUpperCase() == 'S') {
+            console.log("Bem-vindo ao exército brasileiro");
+        } else {
+            console.log("Obrigado.");
+        }
+    }
+} else {
+    console.log("Voce ainda e menor de idade. ");
+}
