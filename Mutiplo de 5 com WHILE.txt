@@ -1,0 +1,14 @@
+const readline = require('readline-sync');
+
+let valor = 0;
+
+while(valor % 5 == 0) {
+    valor = readline.questionInt("Informe um numero multiplo de 5: ");
+    if (valor % 5 == 0) {
+        console.log('Numero: ', valor);
+        console.log('É múltiplo de 5')
+    } else {
+        console.log('Numero: ', valor);
+        console.log('Não é múltiplo de 5')
+    }
+}
