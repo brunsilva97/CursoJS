@@ -1,0 +1,6 @@
+const nomes = [];
+ nomes.push("bruno");
+ nomes.push("felipe");
+ nomes.push("silva");
+ 
+console.log(nomes)

@@ -1,0 +1,15 @@
+// Funções Flechas - Arrow Functions
+const maisUm = n => n + 1;
+const hello = frase => console.log(`Hello ${frase}`);
+
+// Arrow Function com 2 parâmetros
+const soma = (n1, n2) => n1 + n2;
+
+console.log('somatorio', somatorio(5, 9));
+console.log('somaMaisUm', somaMaisUm(8, function(n) {
+    return n + 1;
+}));
+
+console.log('maisUm', maisUm(7));
+hello("World");
+console.log('soma', soma(7, 8));

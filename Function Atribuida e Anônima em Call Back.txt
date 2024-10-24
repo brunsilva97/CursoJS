@@ -1,0 +1,10 @@
+// Função Atribuída
+const somatorio = function (numero1, numero2) {
+    return numero1 + numero2;
+}
+
+// Função Anônima em Callback
+function somaMaisUm(numero, fnAdicionarUm) {
+    // console.log(typeof numero);
+    // console.log(typeof fnAdicionarUm);
+    return fnAdicionarUm(numero);
