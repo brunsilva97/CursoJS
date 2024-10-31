@@ -1,0 +1,250 @@
+**
+ * npm install readline-sync 
+ * 
+ * 1 - Faça um programa que leia um número e identifique se ele é PAR ou Ímpar.
+ * 
+ * 2 - Escreva um programa que imprima os números de 1 à 20.
+ * 
+ * 3 - Escreva um programa que receba 4 notas de um aluno e imprima a sua média final.
+ * 
+ * 4 - Escreva uma função chamada DOBRO que recebe um número e devolve o seu dobro.
+ * 
+ * 5 - Escreva um programa que imprima os múltiplos de 3 e 5 simultaneamente entre 1 e 100.
+ * 
+ * 6 - Escreva um programa que irá receber 2 valores e deverá informar qual é o maior e qual é o menor.
+ * 
+ * 7 - Escreva um programa que irá receber 4 números e deverá informar a soma de todos os números, o menor número e o maior número, além da média dos valores.
+ * 
+ * 8 - Escreva um programa para calcular a soma dos números de 1 a 100.
+ * Saída esperada: "A soma dos números de 1 à 100 é 5050."
+ * 
+ * 9 - Escreva um programa que tenha uma função chamada ehPrimo. Receba um número informado pelo usuário, passe ele para a função. Se o número for primo, deverá retornar true, senão false.
+ * 
+ * 10 - Escreva um programa que receba vários números pelo usuário, números positivos e negativos. Quando o usuário digitar 0 (zero), deverá parar de pedir números para o usuário e deverá retornar QUANTOS NUMEROS POSITIVOS FORAM INFORMADOS, QUANTOS NUMEROS NEGATIVOS FORAM INFORMADOS e QUANTOS NUMEROS FORAM INFORMADOS AO TODO.
+ */
+
+------------------------------------------------------------------------------------------
+Exercicio 1
+
+const readline = require('readline-sync');
+
+const numero = readline.questionInt("Informe um numero: ");
+
+if (numero % 2 == 0) {
+    console.log(`O número ${numero} é par.`);
+} else {
+    console.log(`O número ${numero} é ímpar.`);
+}
+
+------------------------------------------------------------------------------------------
+Exercicio 2
+
+for (let i = 1; i <= 20; i++) {
+    console.log(i);
+}
+
+------------------------------------------------------------------------------------------
+Exercicio 3
+
+const readline = require('readline-sync');
+
+const nome = readline.question("Qual o nome do aluno? ");
+    const nota1 = readline.questionFloat("Qual a nota do Primeiro Bimestre? ");
+    const nota2 = readline.questionFloat("Qual a nota do Segundo Bimestre? ");
+    const nota3 = readline.questionFloat("Qual a nota do Terceiro Bimestre? ");
+    const nota4 = readline.questionFloat("Qual a nota do Quarto Bimestre? ");
+
+let resultado = (nota1 + nota2 + nota3 + nota4)/4;
+
+if (resultado >= 7) {
+    console.log (`O aluno ${nome} foi aprovado com a média de ${resultado}`);
+} else {
+    console.log (`O aulno ${nome} foi reprovado com a média de ${resultado}`);
+}
+------------------------------------------------------------------------------------------
+Exercicio 4
+
+const rl = require('readline-sync');
+
+let numero = rl.questionInt("Insira o seu numero: ");
+
+function dobro(numero) {
+    return numero * 2;
+}
+
+let numeroDobrado = dobro(numero);
+
+console.log(`O dobro de ${numero} é ${numeroDobrado}`);
+
+------------------------------------------------------------------------------------------
+Exercicio 5
+
+const readline = require('readline-sync');
+
+for (let i = 1; i <= 100; i++) {
+    if (i % 3 == 0 && i % 5 == 0) {
+        console.log(i);
+    }
+}
+
+------------------------------------------------------------------------------------------
+Exercicio 6
+
+const readline = require('readline-sync');
+
+const n1 = readline.questionInt("Infome um numero ");
+const n2 = readline.questionInt("Infome outro numero ");
+
+if (n1 > n2){
+    console.log (`Numero ${n1} é maior que ${n2}`);
+} else {
+    console.log (`Numero ${n1} é menor que ${n2}`);
+}
+
+------------------------------------------------------------------------------------------
+Exercicio 7
+
+const readline = require('readline-sync');
+
+const n1 = readline.questionFloat("Informe um numero ");
+const n2 = readline.questionFloat("Informe outro numero ");
+const n3 = readline.questionFloat("Informe outro numero ");
+const n4 = readline.questionFloat("Informe outro numero ");
+
+let soma = (n1 + n2 + n3 + n4)
+    console.log("A some é ", soma )
+
+let media = (soma)/4
+    console.log(`A média é, ${media.toFixed(2)}`)
+
+    let maior = n1;
+let menor = n1;
+
+if (n2 > maior) {
+    maior = n2;
+}
+if (n3 > maior) {
+    maior = n3;
+}
+if (n4 > maior) {
+    maior = n4;
+}
+
+if (n2 < menor) {
+    menor = n2;
+}
+if (n3 < menor) {
+    menor = n3;
+}
+if (n4 < menor) {
+    menor = n4;
+}
+
+console.log(`O maior valor é: ${maior}`);
+console.log(`O menor valor é: ${menor}`);
+
+                OU
+
+let maiorEntreN1eN2;
+let maiorEntraN3eN4;
+let maior;
+
+if (n1 > n2) {
+    maiorEntreN1eN2 = n1;
+} else {
+    maiorEntreN1eN2 = n2;
+}
+
+if (n3 > n4) {
+    maiorEntraN3eN4 = n3;
+} else {
+    maiorEntraN3eN4 = n4;
+}
+
+if (maiorEntreN1eN2 > maiorEntraN3eN4) {
+    maior = maiorEntreN1eN2;
+} else {
+    maior = maiorEntraN3eN4;
+}
+
+                 Utilizando array
+
+const arrayNumeros = [];
+arrayNumeros.push(n1, n2, n3, n4);
+
+const somaArray = arrayNumeros.reduce( (soma, atual) => soma + atual, 0 );
+const mediaArray = somaArray / arrayNumeros.length;
+
+const arrayOrdenado = arrayNumeros.sort( (a, b) => a - b );
+const maiorArray = arrayOrdenado[arrayOrdenado.length - 1];
+const menorArray = arrayOrdenado[0];
+console.log('Array antes da ordenação: ', arrayNumeros);
+console.log('Array ordenado: ', arrayOrdenado);
+
+------------------------------------------------------------------------------------------
+Exercicio 8
+
+const readline = require('readline-sync');
+
+const calcularSoma = () => {
+    let soma = 0;
+
+    for (let i = 1; i <= 100; i++) {
+        soma += i;
+    }
+
+    console.log(`A soma dos números de 1 a 100 é ${soma}`);
+}
+
+calcularSoma();
+
+------------------------------------------------------------------------------------------
+Exercicio 9
+
+const readline = require('readline-sync');
+
+function ehPrimo(numero) {
+    for (let i = 2; i < numero; i++) {
+        if (numero % i == 0) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+const num = readline.questionInt("Informe um numero: ");
+
+if (ehPrimo(num)) {
+    console.log(`O número ${num} é um número primo.`);
+} else {
+    console.log(`O número ${num} não é um número primo.`);
+}
+
+------------------------------------------------------------------------------------------
+Exercicio 10
+
+const readline = require('readline-sync');
+
+let quantidadePositivo = 0;
+let quantidadeNegativo = 0;
+
+let numeroInformado;
+
+while(numeroInformado != 0) {
+    numeroInformado = readline.questionInt("Informe um numero: ");
+
+    if (numeroInformado != 0) {
+        if (numeroInformado > 0) {
+            quantidadePositivo++;
+        } else {
+            quantidadeNegativo++;
+        }
+    }
+}
+
+console.log(`A quantidade de números informados foi ${quantidadeNegativo + quantidadePositivo}`);
+console.log(`A quantidade de números positivos foi ${quantidadePositivo}`);
+console.log(`A quantidade de números negativos foi ${quantidadeNegativo}`);
+
+------------------------------------------------------------------------------------------
